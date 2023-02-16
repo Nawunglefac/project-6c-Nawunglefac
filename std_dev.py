@@ -5,7 +5,7 @@
 # contains 2 parameters (a person's name and age). Then we will have a function that calculates the standard
 # deviation between the ages of those on the list
 
-class Person():
+class Person:
     def _int_(self, name, age):
         self._name = name
         self._age = age
@@ -17,7 +17,7 @@ class Person():
 def std_dev(person_list):
     total = 0
     for person in person_list:
-        total += Person.get_age()
+        total += person.get_age()
     mean_age = total / len(person_list)
 
     squared_sum = 0
