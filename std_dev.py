@@ -35,4 +35,3 @@ def std_dev(person_list):
     deviation = variance ** 0.5
 
     return deviation
-
