@@ -5,32 +5,34 @@
 # contains 2 parameters (a person's name and age). Then we will have a function that calculates the standard
 # deviation between the ages of those on the list
 
+
 class Person:
-    def _int_(self, name, age):
+    """Represents a person with a name and age."""
+
+    def __init__(self, name, age):
+        """Creates a new Person with the specified name and age."""
         self._name = name
         self._age = age
 
     def get_age(self):
+        """Returns the age of a Person."""
         return self._age
 
-
 def std_dev(person_list):
-    total = 0
+    """Returns the standard deviation of a list of Persons."""
+    sum = 0
     for person in person_list:
-        total += person.get_age()
-    mean_age = total / len(person_list)
+        sum += person.get_age()
+
+    mean = sum/len(person_list)
 
     squared_sum = 0
     for person in person_list:
-        squared_sum += (mean_age - person.get_age()) ** 2
+        squared_sum += (person.get_age() - mean) ** 2
 
-    return (squared_sum / len(person_list)) ** 0.5
+    variance = squared_sum / len(person_list)
 
+    deviation = variance ** 0.5
 
-p1 = Person("A", 73)
-p2 = Person("B", 24)
-p3 = Person("C", 48)
+    return deviation
 
-person_list = [p1, p2, p3]
-answer = std_dev(person_list)
-print("standard dev of age:", answer)
